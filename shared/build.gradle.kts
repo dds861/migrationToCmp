@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.androidx.room)
@@ -31,22 +32,31 @@ kotlin {
             isStatic = true
         }
     }
-
     sourceSets {
         commonMain.dependencies {
+            // compose dependencies
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.components.resources)
+            implementation(compose.material3)
             implementation(libs.compose.material)
+
             // koin dependencies
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
+            implementation(libs.koin.compose)
             // room dependencies
             implementation(libs.androidx.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
             implementation(libs.androidx.sqlite)
+
+
+            // coroutine dependencies
+            implementation(libs.kotlinx.coroutines.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
-
         androidMain.dependencies {
             // viewmodel compose dependencies
             implementation(libs.androidx.lifecycle.viewmodel.compose)
