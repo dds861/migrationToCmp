@@ -78,4 +78,6 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
+    // ViewModel Compose
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
