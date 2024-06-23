@@ -1,12 +1,9 @@
-package com.example.migrationtocmp.presentation
+package com.example.shared
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.migrationtocmp.data.User
-import com.example.migrationtocmp.data.UserDatabase
-import com.example.migrationtocmp.data.UserRepository
+import com.example.shared.data.User
+import com.example.shared.data.UserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 

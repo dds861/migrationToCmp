@@ -1,4 +1,4 @@
-package com.example.migrationtocmp.data
+package com.example.shared.data
 
 
 import androidx.room.Entity

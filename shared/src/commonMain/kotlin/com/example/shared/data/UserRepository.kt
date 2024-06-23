@@ -1,8 +1,14 @@
-package com.example.migrationtocmp.data
+package com.example.shared.data
 
 import kotlinx.coroutines.flow.Flow
 
-class UserRepository(private val userDao: UserDao) {
+class UserRepository(private val database: UserDatabase) {
+
+
+    private val userDao: UserDao by lazy {
+        database.userDao()
+    }
+
     val allUsers: Flow<List<User>> = userDao.getUsers()
 
     suspend fun insert(user: User) {
