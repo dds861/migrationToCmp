@@ -19,3 +19,14 @@ local.properties
 .kotlin/
 
 shared/build/
+
+iosApp/iosApp.xcodeproj/project.xcworkspace/xcuserdata/daniyar.nurgaliyev.xcuserdatad/
+
+# Ignore iOS build artifacts
+iosApp/iosApp.xcodeproj/xcuserdata/daniyar.nurgaliyev.xcuserdatad/xcschemes/iosApp.xcscheme
+
+iosApp/iosApp.xcodeproj/xcuserdata/daniyar.nurgaliyev.xcuserdatad/xcschemes/xcschememanagement.plist
+
+iosApp/iosApp.xcodeproj/xcuserdata/daniyar.nurgaliyev.xcuserdatad/xcschemes/
+
+iosApp/iosApp.xcodeproj/xcuserdata/daniyar.nurgaliyev.xcuserdatad/xcdebugger/
