@@ -42,46 +42,44 @@ fun UserScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Column(modifier = Modifier.fillMaxWidth()) {
-            Button(onClick = {
-                val userName = (1..10).map { ('a'..'z').random() }.joinToString("")
-                userViewModel.insert(User(name = "$userName"))
-            }) {
-                Text(text = "Add User")
-            }
+        Button(onClick = {
+            val userName = (1..10).map { ('a'..'z').random() }.joinToString("")
+            userViewModel.insert(User(name = "$userName"))
+        }) {
+            Text(text = "Add User")
+        }
 
-            Button(onClick = {
-                if (articlesState.value.isNotEmpty()) {
-                    userViewModel.update(
-                        User(
-                            id = articlesState.value[0].id,
-                            name = "Updated ${articlesState.value[0].name}"
-                        )
+        Button(onClick = {
+            if (articlesState.value.isNotEmpty()) {
+                userViewModel.update(
+                    User(
+                        id = articlesState.value[0].id,
+                        name = "Updated ${articlesState.value[0].name}"
                     )
-                }
-            }) {
-                Text(text = "Update First User")
+                )
             }
+        }) {
+            Text(text = "Update First User")
+        }
 
-            Button(onClick = {
-                if (articlesState.value.isNotEmpty()) {
-                    userViewModel.delete(articlesState.value[0])
-                }
-            }) {
-                Text(text = "Delete First User")
+        Button(onClick = {
+            if (articlesState.value.isNotEmpty()) {
+                userViewModel.delete(articlesState.value[0])
             }
+        }) {
+            Text(text = "Delete First User")
+        }
 
-            Button(onClick = {
-                userViewModel.deleteAll()
-            }) {
-                Text(text = "Delete All Users")
-            }
+        Button(onClick = {
+            userViewModel.deleteAll()
+        }) {
+            Text(text = "Delete All Users")
+        }
 
 
-            LazyColumn(modifier = Modifier.weight(1f)) {
-                items(articlesState.value) { user ->
-                    Text(text = user.name, style = MaterialTheme.typography.titleLarge)
-                }
+        LazyColumn(modifier = Modifier.weight(1f)) {
+            items(articlesState.value) { user ->
+                Text(text = user.name, style = MaterialTheme.typography.titleLarge)
             }
         }
     }
