@@ -26,6 +26,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.compose.material)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

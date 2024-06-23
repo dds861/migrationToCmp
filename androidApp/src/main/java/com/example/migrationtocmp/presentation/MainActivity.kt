@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.migrationtocmp.data.User
 import com.example.migrationtocmp.presentation.ui.theme.MigrationToCmpTheme
+import com.example.shared.Greeting
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
@@ -65,7 +66,7 @@ fun UserScreen(
         Column(modifier = Modifier.fillMaxWidth()) {
             Button(onClick = {
                 val userName = (1..10).map { ('a'..'z').random() }.joinToString("")
-                insert(User(name = userName))
+                insert(User(name = "${Greeting().greet()} $userName"))
             }) {
                 Text(text = "Add User")
             }
