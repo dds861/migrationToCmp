@@ -15,3 +15,7 @@
 local.properties
 
 .idea/
+
+.kotlin/
+
+shared/build/
